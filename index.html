@@ -2,46 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-->
+    <meta name="viewport" content="width=device-width, initial-sca    <!-- هذا السطر هو الأهم للجوال: يضبط عرض الصفحة على كل الأجهزة
+ le=1.0, maximum-scale=5.0">
     <title>Faith Popcorn: Futurist & Trend Forecaster | BrainReserve</title>
     <style>
         * {
             margin: 0;
-            padding: 0;
+;
+            backgroun            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', Times, serif;
-            background-color: #e8ecf2;
+            font-family: 'Georgia', 'Times New Roman', Times, seri
+fd-color: #e8ecf2;
             display: flex;
             justify-content: center;
-            padding: 2rem 1rem;
-            line-height: 1.6;
+            padding: 1rem; /* تصغير الحواف للجوال */
+            line-height: 1.5;
             color: #1f2a3f;
+x rgba(18, 35, 60, 0.25);
+              font-size: 16px;
         }
 
         .webpage {
-            max-width: 1150px;
+            max-width: 1200px;
             width: 100%;
             background-color: #ffffff;
-            box-shadow: 0 20px 40px -10px rgba(18, 35, 60, 0.25);
-            border: 1px solid #cfdbe9;
+            box-shadow: 0 20px 40px -10
+p          border: 1px solid #cfdbe9;
         }
 
-        /* navigation bar */
+        /* navigation bar - متحرك أفقياً للجوال */
         .top-nav {
             background-color: #102a41;
             color: #d3e2f5;
-            padding: 0.6rem 2rem;
+            padding: 0.8rem 1rem;
             font-family: 'Helvetica', 'Arial', sans-serif;
-            font-size: 0.8rem;
+       scrollbar-width: none;             font-size: 0.8rem;
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             border-bottom: 2px solid #375e8f;
             letter-spacing: 0.3px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+    
+ /* إخفاء شريط التمرير في فايرفوكس */
         }
-
+        .top-nav::-webkit-scrollbar {
+            display: none; /* إخفاء شريط التمرير في كروم وسفاري */
+        }
         .top-nav span {
             cursor: default;
         }
@@ -49,42 +61,50 @@
         /* header with logo */
         .main-header {
             background-color: #f8fafd;
-            padding: 1.2rem 2rem;
+if;
+            font-size: 1.3rem            padding: 1rem 1.2rem;
             border-bottom: 1px solid #bac9dc;
             display: flex;
-            align-items: baseline;
+            flex-wrap: wrap;
+            align-items: center;
             justify-content: space-between;
+            gap: 0.8rem;
         }
 
         .logo {
-            font-family: 'Helvetica', 'Arial', sans-serif;
-            font-size: 1.6rem;
+            font-family: 'Helvetica', 'Arial', sans-se
+r;
             font-weight: 600;
             color: #102a41;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
         }
 
         .logo span {
             font-weight: 300;
             color: #4870a5;
-            font-size: 1rem;
-            margin-left: 8px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+            display: inline-block;
         }
 
         .header-tagline {
             font-style: italic;
-            color: #375477;
-            font-size: 0.9rem;
+: auto;
+            white-s            color: #375477;
+            font-size: 0.8rem;
         }
 
         /* breadcrumb */
         .breadcrumb-row {
             background-color: #ecf1f7;
-            padding: 0.7rem 2rem;
+            padding: 0.6rem 1.2rem;
             font-family: 'Helvetica', 'Arial', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             border-bottom: 1px solid #bac9dc;
             color: #2f476b;
+            overflow-
+xpace: nowrap;
         }
 
         .breadcrumb-row a {
@@ -92,17 +112,19 @@
             color: #134b8e;
         }
 
-        /* main two-column layout */
+        /* main two-column layout - يصبح عمود واحد على الجوال */
         .content-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 0;
-            padding: 2rem 2rem 1.5rem 2rem;
+            gap: 2rem;
+            padding: 1.5rem 1.2rem;
         }
 
         /* left column */
         .article-headline h1 {
-            font-size: 2.4rem;
+ 1rem;
+            font-style: italic;
+                    font-size: 2rem; /* تصغير للجوال */
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 0.3rem;
@@ -111,76 +133,80 @@
         }
 
         .dek {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #375477;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             border-left: 3px solid #8fabd0;
-            padding-left: 1.2rem;
-            font-style: italic;
-        }
+            padding-left
+:}
 
         .byline-block {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin: 1.5rem 0 2rem 0;
+            gap: 10px;
+            margin: 1rem 0 1.5rem 0;
             font-family: 'Helvetica', 'Arial', sans-serif;
+            flex-wrap: wrap;
         }
 
         .author-avatar {
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             background-color: #b6c5dd;
             border-radius: 50%;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231d3b66"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
-            background-size: 55%;
+rgin-bottom: 1.5rem;
+                        background-size: 55%;
             background-position: center 60%;
             background-repeat: no-repeat;
             background-color: #1f3f68;
+            flex-shrink: 0;
         }
 
         .byline-text .author-name {
             font-weight: 700;
             color: #102a41;
+            font-size: 0.95rem;
         }
 
         .byline-text .date {
             color: #5d6f8a;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         /* hero image placeholder */
         .hero-image {
             width: 100%;
-            height: 220px;
+            height: 160px; /* أقل ارتفاعاً للجوال */
             background: linear-gradient(105deg, #dadde5 0%, #b2c1d4 100%);
-            margin-bottom: 2rem;
-            border-radius: 4px;
+            m
+aborder-radius: 4px;
             border: 1px solid #a5b7ce;
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
-            padding: 1rem 1.5rem;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" width="300" height="60" fill="%23ffffff" opacity="0.3"><text x="10" y="20" font-family="Arial" font-size="14" fill="%23000">Faith Popcorn, BrainReserve NYC</text></svg>');
+            padding: 0.8rem 1rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" width="250" height="40" fill="%23ffffff" opacity="0.3"><text x="10" y="20" font-family="Arial" font-size="12" fill="%23000">Faith Popcorn, BrainReserve NYC</text></svg>');
             background-repeat: no-repeat;
-            background-position: bottom 10px left 20px;
-            background-size: 300px 50px;
+            background-position: bottom 8px left 15px;
+            background-size: 250px 40px;
         }
 
         .hero-caption {
             background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 0.3rem 1.2rem;
+ial', sans-serif;
+                   color: white;
+            padding: 0.2rem 1rem;
             border-radius: 2px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-family: 'Helvetica', 'Arial', sans-serif;
             border-left: 3px solid #95b8e8;
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
-            margin: 2rem 0 1rem 0;
+            margin: 1.5rem 0 0.8rem 0;
             color: #0a2b47;
             font-family: 'Helvetica', 'Arial', sans-serif;
             border-bottom: 1px solid #cbd6e6;
@@ -189,56 +215,63 @@
 
         h3 {
             font-weight: 600;
-            margin: 1.5rem 0 0.5rem 0;
+            margin: 1.2rem 0 0.5rem 0;
             color: #1b3f66;
-            font-size: 1.3rem;
-            font-family: 'Helvetica', 'Arial', sans-serif;
-        }
+            font-size: 1.2rem;
+            font-family: 'Helvetica', 'A
+r }
 
         p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
         .steps-container {
             background-color: #f5f9ff;
             border: 1px solid #c2d4ec;
-            padding: 1.2rem 1.8rem;
-            margin: 1.8rem 0;
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
             border-radius: 0;
         }
 
         .step-item {
             display: flex;
-            gap: 15px;
-            margin-bottom: 1.2rem;
+            gap: 12px;
+            margin-bottom: 1rem;
             align-items: flex-start;
         }
 
         .step-number {
             background-color: #1f4172;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             font-family: 'Helvetica', 'Arial', sans-serif;
-            flex-shrink: 0;
+ction h4 {
+            font            flex-shrink: 0;
             border-radius: 0;
+            font-size: 0.9rem;
+        }
+
+        .step-content {
+            font-size: 0.95rem;
         }
 
         .step-content strong {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #002856;
         }
 
         .pullquote {
             border-left: 5px solid #1f4172;
             background-color: #f0f4fc;
-            padding: 1.2rem 1.8rem;
-            margin: 1.8rem 0;
-            font-size: 1.1rem;
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            font-size: 1rem;
             font-style: italic;
             color: #102c47;
             font-family: 'Georgia', serif;
@@ -247,16 +280,25 @@
         .healthcare-section {
             background-color: #f2f6fb;
             border: 1px solid #b9ceec;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
+            padding: 1.2rem 1.2rem;
+            margin: 1.5rem 0;
         }
 
-        .healthcare-section h4 {
-            font-size: 1.4rem;
+        .healthcare-s
+e-size: 1.2rem;
             font-weight: 600;
             color: #00377a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        .healthcare-section ul {
+            margin-left: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .healthcare-section li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
         }
 
         .status-badge {
@@ -264,57 +306,59 @@
             background-color: #f0f7f0;
             border: 1px solid #7fa57f;
             color: #1b4c1b;
-            padding: 0.3rem 1.2rem;
-            font-size: 0.9rem;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
             font-weight: 600;
             font-family: 'Helvetica', 'Arial', sans-serif;
             letter-spacing: 0.3px;
-            margin-top: 0.5rem;
+            margin: 1rem 0 0.5rem;
         }
 
         /* sidebar */
-        .sidebar {
+4-4 1.79-4 4 1.79         .sidebar {
             border-left: 1px solid #cbd6e6;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
         }
 
         .info-card {
             background: #f8fafd;
             border: 1px solid #c2d2e8;
-            padding: 1.8rem 1.5rem;
-            margin-bottom: 2rem;
+            padding: 1.2rem 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .info-card h3 {
             margin-top: 0;
             border-bottom: 1px solid #b0c3db;
             padding-bottom: 0.5rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         .profile-photo {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background-color: #b2c2d9;
-            margin: 0 auto 1.2rem auto;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231d3b66"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+            margin: 0 auto 1rem auto;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231d3b66"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4
+-4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
             background-size: 60%;
             background-position: center 55%;
             background-repeat: no-repeat;
             background-color: #20426b;
+            border-radius: 50%;
         }
 
         .info-line {
             display: flex;
-            padding: 0.6rem 0;
+            padding: 0.4rem 0;
             border-bottom: 1px dashed #b9cae0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .info-label {
             font-weight: 600;
-            width: 80px;
+            width: 70px;
             color: #1e3d64;
         }
 
@@ -325,53 +369,53 @@
         .trend-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 4px;
             margin-top: 0.5rem;
         }
 
         .trend-item {
             background: white;
             border: 1px solid #9fb4d3;
-            padding: 0.2rem 1rem;
-            font-size: 0.85rem;
+footer-links {
+            display:            padding: 0.2rem 0.8rem;
+            font-size: 0.8rem;
             font-family: 'Helvetica', 'Arial', sans-serif;
             color: #1f3d67;
         }
 
-        .client-list {
+        .client-list, .source-list {
             list-style: none;
             padding: 0;
         }
-        .client-list li {
-            padding: 0.3rem 0;
+        .client-list li, .source-list li {
+            padding: 0.25rem 0;
             border-bottom: 1px dotted #bac9dc;
-            font-size: 0.95rem;
-        }
-
-        .source-list {
-            list-style: none;
-            padding: 0;
-        }
-        .source-list li {
-            margin-bottom: 0.5rem;
             font-size: 0.9rem;
         }
 
         /* footer */
         .site-footer {
             background-color: #f0f5fc;
-            padding: 1.2rem 2rem;
+            padding: 1rem 1.2rem;
             border-top: 2px solid #bacde2;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-family: 'Helvetica', 'Arial', sans-serif;
             color: #2d4b73;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        
+. flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
 
         .footer-links span {
-            margin-left: 1.2rem;
             color: #0b3f77;
+            cursor: default;
         }
 
         a {
@@ -382,6 +426,62 @@
         a:hover {
             text-decoration: underline;
         }
+
+        /* استعلام الوسائط - للشاشات الصغيرة */
+        @media screen and (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr; /* عمود واحد */
+                gap: 1.5rem;
+                padding: 1.2rem 1rem;
+            }
+            
+            .sidebar {
+                border-left: none;
+                padding-left: 0;
+            }
+            
+            .main-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+     <span>BU            }
+            
+            .article-headline h1 {
+                font-size: 1.8rem;
+            }
+            
+            body {
+                padding: 0.5rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .article-headline h1 {
+                font-size: 1.6rem;
+            }
+            
+            .step-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .step-number {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .top-nav {
+                gap: 1rem;
+                font-size: 0.75rem;
+            }
+            
+            .hero-image {
+                height: 130px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -389,10 +489,13 @@
     <!-- top bar -->
     <div class="top-nav">
         <span>✦ FUTURIST</span>
-        <span>BUSINESS</span>
+  
+ SINESS</span>
         <span>HEALTHCARE</span>
         <span>TRENDS</span>
         <span>ARCHIVE</span>
+        <span>INSIGHTS</span>
+        <span>CONTACT</span>
     </div>
 
     <!-- header -->
@@ -413,7 +516,7 @@
             <div class="article-headline">
                 <h1>Faith Popcorn: The Futurist Who Decodes Tomorrow</h1>
                 <div class="dek">How a marketing visionary became healthcare’s unexpected advisor</div>
-            </div>
+ltural shifts.</p>            </div>
 
             <div class="byline-block">
                 <div class="author-avatar"></div>
@@ -429,7 +532,8 @@
             </div>
 
             <!-- article body -->
-            <p>Faith Popcorn is not a physician, nor does she hold a degree in public health. Yet her name appears in healthcare boardrooms from Boston to Tokyo. She is a <strong>futurist</strong>—a professional forecaster who helps industries prepare for what’s next. For nearly five decades, her company BrainReserve has guided Fortune 500 companies through cultural shifts.</p>
+            <p>Faith Popcorn is not a physician, nor does she hold a degree in public health. Yet her name appears in healthcare boardrooms from Boston to Tokyo. She is a <strong>futurist</strong>—a professional forecaster who helps industries prepare for what’s next. For nearly five decades, her company BrainReserve has guided Fortune 500 companies through c
+u
 
             <div class="pullquote">
                 “I don’t predict the future to be right. I predict it so you can be ready.” — Faith Popcorn
@@ -445,7 +549,8 @@
                 <div class="step-item">
                     <div class="step-number">1</div>
                     <div class="step-content"><strong>Tracking</strong> — A dedicated team monitors thousands of signals annually: patent filings, indie films, food packaging, underground blogs, and medical journals. Nothing is too fringe.</div>
-                </div>
+e-section">
+                          </div>
                 <div class="step-item">
                     <div class="step-number">2</div>
                     <div class="step-content"><strong>Naming Trends</strong> — Popcorn distills patterns into memorable concepts. Her most famous is <em>“cocooning”</em> (the impulse to stay home for security and comfort), identified years before the rise of delivery apps and remote work.</div>
@@ -459,9 +564,9 @@
             <h2>Application to Healthcare</h2>
             <p>Healthcare organizations hire Popcorn to understand what patients will want five or ten years ahead. She translates cultural signals into actionable strategy.</p>
 
-            <div class="healthcare-section">
-                <h4>How a Futurist Informs Medicine</h4>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <div class="healthca
+r      <h4>How a Futurist Informs Medicine</h4>
+                <ul>
                     <li><strong>Virtual health:</strong> Popcorn predicted the demand for “click and mortar” care—remote consultations paired with occasional in-person visits—long before telehealth became standard.</li>
                     <li><strong>Mental wellness:</strong> She advised providers to offer digital therapy apps and mental health days, anticipating the destigmatization of psychological care.</li>
                     <li><strong>Personalized medicine:</strong> Her trend “egonomics” flagged the desire for individualized treatment, from genetic testing to custom nutrition plans.</li>
@@ -481,7 +586,7 @@
             <div class="info-card">
                 <div class="profile-photo"></div>
                 <h3 style="text-align: center; border-bottom: none;">Faith Popcorn</h3>
-                <p style="text-align: center; color: #1f4172; margin-bottom: 1.5rem;">Futurist · Consultant · Author</p>
+                <p style="text-align: center; color: #1f4172; margin-bottom: 1rem;">Futurist · Consultant · Author</p>
 
                 <div class="info-line">
                     <span class="info-label">Born</span>
@@ -489,14 +594,15 @@
                 </div>
                 <div class="info-line">
                     <span class="info-label">Company</span>
-                    <span class="info-value">BrainReserve (Founder, 1974)</span>
+                    <span class="info-value">BrainReserve (1974)</span>
                 </div>
                 <div class="info-line">
                     <span class="info-label">Known for</span>
                     <span class="info-value">Cocooning, trend forecasting</span>
                 </div>
                 <div class="info-line">
-                    <span class="info-label">Status</span>
+         
+           <span class="info-label">Status</span>
                     <span class="info-value"><strong style="color: #1a6e1a;">Alive</strong> — not deceased</span>
                 </div>
             </div>
@@ -517,13 +623,14 @@
 
             <!-- selected healthcare clients -->
             <div class="info-card">
-                <h3>Healthcare Clients (partial)</h3>
+                <h3>Healthcare Clients</h3>
                 <ul class="client-list">
                     <li>Johnson & Johnson</li>
                     <li>Pfizer Inc.</li>
                     <li>Mayo Clinic</li>
                     <li>Kaiser Permanente</li>
-                    <li>CVS Health</li>
+2025 The Foresight Forum</div>
+                            <li>CVS Health</li>
                 </ul>
             </div>
 
@@ -541,23 +648,22 @@
             </div>
 
             <!-- quick fact -->
-            <div style="background-color: #f0f4fa; padding: 1rem; border: 1px solid #b3c7e2;">
-                <p style="font-style: italic; margin: 0;"><span style="font-weight: 600;">Note:</span> Faith Popcorn is frequently misidentified as a market researcher only. She prefers <strong>“futurist”</strong> — a distinction that emphasizes her forward-looking methodology.</p>
+            <div style="background-color: #f0f4fa; padding: 0.8rem; border: 1px solid #b3c7e2;">
+                <p style="font-style: italic; margin: 0; font-size: 0.9rem;"><span style="font-weight: 600;">Note:</span> Faith Popcorn is frequently misidentified as a market researcher only. She prefers <strong>“futurist”</strong> — a distinction that emphasizes her forward-looking methodology.</p>
             </div>
         </div>
     </div>
 
     <!-- footer -->
     <div class="site-footer">
-        <div>© 2025 The Foresight Forum — All rights reserved</div>
-        <div class="footer-links">
+        <div>©
+ <div class="footer-links">
             <span>About</span>
             <span>Contact</span>
             <span>Privacy</span>
-            <span>Citations</span>
+            <span>Sources</span>
         </div>
     </div>
 </div>
 </body>
-</html> make it works on mobile web too
-
+</html>
